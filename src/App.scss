@@ -16,3 +16,31 @@
     text-align: center;
   }
 }
+
+.winner {
+  color: green;
+}
+
+.error {
+  color: #792424;
+  margin-left: 20px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+}
+
+input {
+  height: 40px;
+  margin: 0 20px;
+  padding: 16px;
+}
+
+button {
+  height: 40px;
+  padding: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
