@@ -1,0 +1,187 @@
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+
+  tr {
+    td {
+      &:before,
+      &:after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        color: var(--silver-chalice);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &:before {
+        top: -100%;
+        left: 0;
+      }
+
+      &:after {
+        top: 0;
+        left: -100%;
+      }
+    }
+
+    &:nth-child(1) {
+      td:nth-child(1) {
+        &:before {
+          content: '0',
+        }
+
+        &:after {
+          content: 'A',
+        }
+      }
+  
+      td:nth-child(2) {
+        &:before {
+          content: '1',
+        }
+      }
+  
+      td:nth-child(3) {
+        &:before {
+          content: '2',
+        }
+      }
+  
+      td:nth-child(4) {
+        &:before {
+          content: '3',
+        }
+      }
+  
+      td:nth-child(5) {
+        &:before {
+          content: '4',
+        }
+      }
+  
+      td:nth-child(6) {
+        &:before {
+          content: '5',
+        }
+      }
+  
+      td:nth-child(7) {
+        &:before {
+          content: '6',
+        }
+      }
+  
+      td:nth-child(8) {
+        &:before {
+          content: '7',
+        }
+      }
+  
+      td:nth-child(9) {
+        &:before {
+          content: '8',
+        }
+      }
+  
+      td:nth-child(10) {
+        &:before {
+          content: '9',
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      td:nth-child(1) {
+        &:after {
+          content: 'B',
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      td:nth-child(1) {
+        &:after {
+          content: 'C',
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      td:nth-child(1) {
+        &:after {
+          content: 'D',
+        }
+      }
+    }
+
+    &:nth-child(5) {
+      td:nth-child(1) {
+        &:after {
+          content: 'E',
+        }
+      }
+    }
+
+    &:nth-child(6) {
+      td:nth-child(1) {
+        &:after {
+          content: 'F',
+        }
+      }
+    }
+
+    &:nth-child(7) {
+      td:nth-child(1) {
+        &:after {
+          content: 'G',
+        }
+      }
+    }
+
+    &:nth-child(8) {
+      td:nth-child(1) {
+        &:after {
+          content: 'H',
+        }
+      }
+    }
+
+    &:nth-child(9) {
+      td:nth-child(1) {
+        &:after {
+          content: 'I',
+        }
+      }
+    }
+
+    &:nth-child(10) {
+      td:nth-child(1) {
+        &:after {
+          content: 'J',
+        }
+      }
+    }
+  }
+
+  td {
+    border: 1px solid var(--separator);
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    position: relative;
+  }
+
+  .ship {
+    background: var(--silver-chalice);
+  }
+
+  .hit {
+    background-color: #792424;
+  }
+  
+  .miss {
+    background-color: #00ff00;
+  }
+}
