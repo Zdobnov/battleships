@@ -65,13 +65,23 @@ const App = () => {
     }
   }, [playerHealth, opponentHealth]);
 
-  const handleChange = e => {
-    setCoordinates(e.target.value);
-  };
+  const handleChange = event => setCoordinates(event.target.value);
 
-  const handleClick = () => {
+  const handleSubmit = event => {
+    event.preventDefault();
+
+    if (!/^[A-Ia-i]{1}\d{1,2}/g.test(coordinates)) {
+      setError(true);
+      return;
+    }
+
     const col = coordinates[0].toUpperCase();
     const row = +coordinates.slice(1);
+
+    if (row > 10) {
+      setError(true);
+      return;
+    }
 
     makeShot([abc[col], ( row - 1 )]);
     setCoordinates('');
@@ -119,7 +129,7 @@ const App = () => {
       <p>
         Turn: <b>{isPlayerTurn ? "Player" : 'Opponent'}</b>
       </p>
-      <label>
+      <form onSubmit={handleSubmit}>
         Enter coordinate:
         <input
           type="text"
@@ -127,19 +137,14 @@ const App = () => {
           placeholder="E.g. C4"
           value={coordinates}
           disabled={winner || !isPlayerTurn}
+          autoFocus
         />
-        <button
-          onClick={handleClick}
-          disabled={winner || !isPlayerTurn}
-        >
-          FIRE
-        </button>
-        {error && (
+        {error && !winner && (
           <span className="error">
             Wrong tile!
           </span>
         )}
-      </label>
+      </form>
       <main className="main">
         <div className="field">
           <h3>

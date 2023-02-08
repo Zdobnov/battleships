@@ -26,21 +26,13 @@
   margin-left: 20px;
 }
 
-label {
+form {
   display: flex;
   align-items: center;
 }
 
 input {
   height: 40px;
-  margin: 0 20px;
+  margin-left: 20px;
   padding: 16px;
-}
-
-button {
-  height: 40px;
-  padding: 16px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
 }
