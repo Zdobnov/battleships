@@ -70,7 +70,7 @@ const App = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    if (!/^[A-Ia-i]{1}\d{1,2}/g.test(coordinates)) {
+    if (!/^[A-Ja-j]{1}\d{1,2}$/g.test(coordinates)) {
       setError(true);
       return;
     }
@@ -78,7 +78,7 @@ const App = () => {
     const col = coordinates[0].toUpperCase();
     const row = +coordinates.slice(1);
 
-    if (row > 10) {
+    if (row === 0 || row > 10) {
       setError(true);
       return;
     }
